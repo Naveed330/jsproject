@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="addIMG('apple')" id="apple">ADD Apple</button>
+    <button onclick="addIMG('banana')" id="banana">ADD Banana</button>
+    <button onclick="removeData()"> Remove</button>
+    
+     <div id="container">
+     </div>
+    
+     <script>
+         let elements;
+         var div1;
+         let data ;
+
+        function addIMG(obj){
+             var id=obj;
+           // alert(id);
+            data = document.getElementById("container");
+            let images = document.createElement("img");
+            data.appendChild(images);
+            images.onclick = function(){
+                images.remove();
+            }
+           if ( id == "apple" ){
+               //event.toElement.id
+               //event.srcElement.id
+               //event.target.id
+               
+            images.src = "apple.jpg";
+           }
+           else{
+            images.src = "banana.jpg";
+           }
+        }
+
+        function removeData (){
+            data.removeChild(data.childNodes[0]);
+        }
+
+     </script>
+</body>
+</html>
